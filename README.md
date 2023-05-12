@@ -1,11 +1,11 @@
-About njoy2016
-==============
+About njoy2016-feedstock
+========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/njoy2016-feedstock/blob/main/LICENSE.txt)
 
 Home: https://www.njoy21.io/NJOY2016/
 
 Package license: BSD-3-Clause
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/njoy2016-feedstock/blob/main/LICENSE.txt)
 
 Summary: Nuclear data processing with legacy NJOY
 
