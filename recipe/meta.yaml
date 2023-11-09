@@ -1,5 +1,5 @@
 {% set name = "NJOY2016" %}
-{% set version = "2016.71" %}
+{% set version = "2016.73" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://github.com/njoy/{{ name }}/archive/refs/tags/{{ version }}.tar.gz
-  sha256: 1b5cd1207eafa7e51f002502091c25b0b8ba2132deb60a30ccd1cbb5a2c5b132
+  sha256: 033725770455447c28f73dc933b3d05b9f70a657589fd73471c6336b57b7ce20
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win or py<34]
 
 requirements:
