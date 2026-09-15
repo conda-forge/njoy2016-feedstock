@@ -1,0 +1,58 @@
+schema_version: 1
+
+context:
+  version: "2016.78"
+
+package:
+  name: njoy2016
+  version: ${{ version }}
+
+source:
+  url: https://github.com/njoy/njoy2016/archive/refs/tags/${{ version }}.tar.gz
+  sha256: 615b7ab506f64d53fcd09d3731762fa6e86d96c97497c1049417c48487a31ff2
+
+build:
+  number: 2
+  skip: win
+
+requirements:
+  build:
+    - ${{ stdlib("c") }}
+    - ${{ compiler("cxx") }}
+    - ${{ compiler("fortran") }}
+    - if: build_platform != target_platform
+      then:
+        - python
+        - cross-python_${{ target_platform }}
+    - cmake
+    - make
+  host:
+    - python
+  run:
+    - python
+
+tests:
+  - script:
+      - python -c "import shutil; assert(shutil.which('njoy') != None)"
+
+about:
+  summary: Nuclear data processing with legacy NJOY
+  description: |
+    The NJOY Nuclear Data Processing System is a modular computer code designed
+    to read evaluated data in ENDF format, transform the data in various ways,
+    and output the results as libraries designed to be used in various applications.
+    Each module performs a well defined processing task. The modules are essentially
+    independent programs, and they communicate with each other using input and
+    output files, plus a very few common variables.
+  license: BSD-3-Clause
+  license_file: LICENSE
+  homepage: https://www.njoy21.io/NJOY2016/
+  repository: https://github.com/njoy/NJOY2016
+  documentation: https://www.njoy21.io/NJOY2016/
+
+extra:
+  recipe-maintainers:
+    - paulromano
+    - kkiesling
+    - nathangibson14
+    - whaeck
