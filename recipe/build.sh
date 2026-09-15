@@ -8,9 +8,10 @@ if [[ "${target_platform}" == "linux-aarch64" || "${target_platform}" == "osx-ar
 fi
 
 cmake ${CMAKE_ARGS} -DCMAKE_INSTALL_PREFIX="${PREFIX}" \
-      -DCMAKE_BUILD_TYPE=Release
-make -j "${CPU_COUNT}"
-make install
+      -DCMAKE_BUILD_TYPE=Release -S "${SRC_DIR}" -B build
+cmake build -LH
+cmake --build build --parallel "${CPU_COUNT}"
+cmake --install build
 if [[ "${CONDA_BUILD_CROSS_COMPILATION:-}" != "1" || "${CROSSCOMPILING_EMULATOR}" != "" ]]; then
 ctest --output-on-failure
 fi
