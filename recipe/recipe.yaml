@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "2016.78"
+  version: "2016.80"
 
 package:
   name: njoy2016
@@ -9,10 +9,10 @@ package:
 
 source:
   url: https://github.com/njoy/njoy2016/archive/refs/tags/${{ version }}.tar.gz
-  sha256: 615b7ab506f64d53fcd09d3731762fa6e86d96c97497c1049417c48487a31ff2
+  sha256: 8a039819cb6f44780834299b871e9793a7742ce8437a6efc611d3f2d297453f8
 
 build:
-  number: 2
+  number: 0
   skip: win
 
 requirements:
